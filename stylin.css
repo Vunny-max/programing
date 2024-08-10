@@ -1,0 +1,96 @@
+*{
+   box-sizing: border-box;
+    margin: 0;
+}
+body{
+background-color: aqua;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+font-family: "Monsterrat",sans-serif ;
+font-size: 10px;
+height: 100vh;
+margin: -20px 10 50px;
+padding: 10px ;
+}
+.container{
+    background-color: #ffffff;
+    border-radius: 5px ;
+    box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22); 
+    position: relative;
+    overflow: hidden;
+    width:768px;
+    max-width:100%;
+    min-height:522px;
+    max-width:370px;
+}
+.card-container{
+    display: flex;
+}
+.left{
+    height:480 ;
+    background-color: aqua;
+    flex: 1;
+}
+.right{
+    display: flex;
+    flex: 1;
+    height:460px ;
+    background-color:#ffffff ;
+    justify-content:center ;
+    align-content: center;
+}
+.left{
+    display: flex;
+    background-color: #ffffff;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 522px;
+}
+.left-corner{
+height: 50px;
+width: 80px;
+text-align:center ;
+line-height:22px ;
+}
+.left p{
+    font-size: 0.9rem;
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.right-container{
+    width: 70% ;
+    height: 80%;
+    text-align: center;
+}
+
+input,
+textarea{
+    background-color: #ffffff;
+    border:none ;
+    padding: 12px 15px ;
+    margin:8px 0 ;
+    width: 100%;
+    font-size: 0,8rem;
+}
+input :focus,
+textarea :focus{
+    outline: 1px solid #00b4cf;
+}
+button{
+    border-radius:20 px ;
+    border: 1px solid #00b4cf;
+    background-color: #00b4cf;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding:12px 45px ;
+    letter-spacing:1px ;
+    text-transform: uppercase;
+    transition: transform 80ms ease-out;
+}
+

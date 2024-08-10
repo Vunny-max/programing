@@ -1,0 +1,14 @@
+.Inputgroup{
+  
+   display: flex;
+   margin-top: 5px;
+}
+.Inputtitle{
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.btnsubmit{
+    margin: 20px;
+}

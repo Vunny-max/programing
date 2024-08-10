@@ -1,0 +1,40 @@
+<html>
+    <head> <link rel="stylesheet" href="index.css"></head>
+    <body>
+            <div class="Inputgroup">
+                <p class="inputtitle">Nama :</p>
+                <input id="inputnama" type="text">
+            </div>
+        <div class="Inputgroup">
+            <p class="Inputtitle">Kelas :</p>
+            <input id="Inputkelas"type="text">
+        </div>
+        <div class="Inputgroup">
+            <p class="Inputtitle"> Absen :</p>
+            <input id="Inputabsen"type="text">
+        </div>
+        <button class="btnsubmit" onclick="changekonten()">Kirim</button>
+        <p id="displaynama"></p>
+        <p id="displaykelas"></p>
+        <p id="displayabsen"></p>
+        <script>
+            let nama = ""
+            let kelas = ""
+            let absen = ""
+            function changekonten(){
+                saveinput()
+                displayinput()
+            }
+            function saveinput(){
+                nama = document.getElementById("Inputnama").value
+                kelas = document.getElementById("Inputkelas").value
+                absen = document.getElementById("Inputabbsen").value
+            }
+            function displayinput(){
+                document.getElementById("displaynama").innerHTML = "Nama=" + nama
+                document.getElementById("displaykelas").innerHTML = "Kelas=" + kelas
+                document.getElementById("displayabsen").innerHTML = "Absen=" + absen
+            }
+            </script>
+    </body>
+</html>
