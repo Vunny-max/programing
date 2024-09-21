@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            background-color: aquamarine;
+        }
+        table, td{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            background-color: #ffff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Input Barang</h1>
+    <label>Nama Barang:</label>
+    <input type="text" id="nama" required><br><br>
+
+    <label>Harga Barang:</label>
+    <input type="number" id="harga" required><br><br>
+
+    <label>Jumlah Barang:</label>
+    <input type="number" id="jumlah" required><br><br>
+
+    <button onclick="Submit()">Submit</button>
+
+    <h2>Daftar Barang</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+                <th>Total</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="daftarBarang"></tbody>
+    </table>
+
+    <h3>Total Keseluruhan: <span id="totalKeseluruhan">0</span></h3>
+
+    <script>
+        let totalKeseluruhan = 0;
+
+        function Submit() {
+            const nama = document.getElementById('nama').value;
+            const harga = parseFloat(document.getElementById('harga').value);
+            const jumlah = parseInt(document.getElementById('jumlah').value);
+            const total = harga * jumlah;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${nama}</td>
+                <td>${harga}</td>
+                <td>${jumlah}</td>
+                <td>${total}</td>
+                <td><button onclick="hapusBarang(this, ${total})">Remove</button></td>
+            `;
+            document.getElementById('daftarBarang').appendChild(row);  
+            totalKeseluruhan += total;
+            document.getElementById('totalKeseluruhan').innerText = totalKeseluruhan;
+            document.getElementById('nama').value = '';
+            document.getElementById('harga').value = '';
+            document.getElementById('jumlah').value = '';
+        }
+
+        function hapusBarang(button, total) {
+            totalKeseluruhan -= total;
+            document.getElementById('totalKeseluruhan').innerText = totalKeseluruhan;
+            const row = button.parentElement.parentElement;
+            row.remove();
+        }
+    </script>
+
+</body>
+</html>
